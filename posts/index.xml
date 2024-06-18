@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>All Posts - Qirui FU</title>
-        <link>https://qiruifu.github.io/posts/</link>
+        <link>http://qiruifu.github.io/posts/</link>
         <description>All Posts | Qirui FU</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui FU)</managingEditor>
-            <webMaster>fu_qirui@foxmail.com (Qirui FU)</webMaster><lastBuildDate>Tue, 18 Jun 2024 15:04:32 &#43;0800</lastBuildDate><atom:link href="https://qiruifu.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>fu_qirui@foxmail.com (Qirui FU)</webMaster><lastBuildDate>Tue, 18 Jun 2024 15:04:32 &#43;0800</lastBuildDate><atom:link href="http://qiruifu.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>First</title>
-    <link>https://qiruifu.github.io/first/</link>
+    <link>http://qiruifu.github.io/first/</link>
     <pubDate>Tue, 18 Jun 2024 15:04:32 &#43;0800</pubDate>
     <author>Qirui FU</author>
-    <guid>https://qiruifu.github.io/first/</guid>
+    <guid>http://qiruifu.github.io/first/</guid>
     <description><![CDATA[666 I am trying here]]></description>
 </item>
 </channel>
