@@ -6,5 +6,13 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui FU)</managingEditor>
             <webMaster>fu_qirui@foxmail.com (Qirui FU)</webMaster><lastBuildDate>Tue, 18 Jun 2024 15:04:32 &#43;0800</lastBuildDate>
             <atom:link href="http://qiruifu.github.io/index.xml" rel="self" type="application/rss+xml" />
-        </channel>
+        <item>
+    <title>First</title>
+    <link>http://qiruifu.github.io/first/</link>
+    <pubDate>Tue, 18 Jun 2024 15:04:32 &#43;0800</pubDate>
+    <author>Qirui FU</author>
+    <guid>http://qiruifu.github.io/first/</guid>
+    <description><![CDATA[666 I am trying here]]></description>
+</item>
+</channel>
 </rss>
