@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on Qirui FU</title>
+    <link>http://qiruifu.github.io/about/</link>
+    <description>Recent content in Abouts on Qirui FU</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>fu_qirui@foxmail.com (Qirui FU)</managingEditor>
+    <webMaster>fu_qirui@foxmail.com (Qirui FU)</webMaster><atom:link href="http://qiruifu.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://qiruifu.github.io/about/homepage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>fu_qirui@foxmail.com (Qirui FU)</author>
+      <guid>http://qiruifu.github.io/about/homepage/</guid>
+      <description>Qirui FU I am a bacholer student in Nanjing University.</description>
+    </item>
+    
+  </channel>
+</rss>
