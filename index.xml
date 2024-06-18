@@ -7,12 +7,12 @@
             <webMaster>fu_qirui@foxmail.com (Qirui FU)</webMaster><lastBuildDate>Tue, 18 Jun 2024 15:04:32 &#43;0800</lastBuildDate>
             <atom:link href="http://qiruifu.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>First</title>
+    <title>First Blog Here</title>
     <link>http://qiruifu.github.io/first/</link>
     <pubDate>Tue, 18 Jun 2024 15:04:32 &#43;0800</pubDate>
     <author>Qirui FU</author>
     <guid>http://qiruifu.github.io/first/</guid>
-    <description><![CDATA[666 I am trying here]]></description>
+    <description><![CDATA[A Start of this Website As a student major in Computer Science, I think it&rsquo;s really cool to build my own website. In the past, I wrote some blogs in 洛谷. But the blog function has been cancled in 洛谷 now, so I am unable to design the webpage and you can only read the articles in column format(By the way, they&rsquo;re all written in Chinese). In purpose of recording my feelings and displaying my CV and information like a researcher, I dicide to build this website with help of Hugo.]]></description>
 </item>
 </channel>
 </rss>

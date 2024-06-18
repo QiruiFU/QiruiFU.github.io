@@ -3,4 +3,4 @@
 
 # About me 
 
-I am a student in Nanjing University
+I am a student in Nanjing University.
