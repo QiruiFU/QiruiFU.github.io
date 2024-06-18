@@ -1,0 +1,10 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Qirui FU</title>
+        <link>https://QiruiFU.github.io/</link>
+        <description>Website for Qirui FU</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui FU)</managingEditor>
+            <webMaster>fu_qirui@foxmail.com (Qirui FU)</webMaster>
+            <atom:link href="https://QiruiFU.github.io/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
+</rss>
