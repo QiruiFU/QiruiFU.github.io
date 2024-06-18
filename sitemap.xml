@@ -1,23 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://qiruifu.github.io/blogs/</loc>
-    <lastmod>2024-06-18T15:04:32+08:00</lastmod>
-  </url><url>
-    <loc>https://qiruifu.github.io/blogs/first/</loc>
-    <lastmod>2024-06-18T15:04:32+08:00</lastmod>
-  </url><url>
-    <loc>https://qiruifu.github.io/</loc>
-    <lastmod>2024-06-18T15:04:32+08:00</lastmod>
-  </url><url>
-    <loc>https://qiruifu.github.io/homepage/</loc>
-    <priority>0</priority>
-  </url><url>
-    <loc>https://qiruifu.github.io/garden_tags/</loc>
-  </url><url>
-    <loc>https://qiruifu.github.io/library_tags/</loc>
-  </url><url>
-    <loc>https://qiruifu.github.io/project_tags/</loc>
-  </url>
-</urlset>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    ><url>
+            <loc>http://qiruifu.github.io/blogs/</loc><lastmod>2024-06-18T15:04:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://qiruifu.github.io/blogs/first/</loc><lastmod>2024-06-18T15:04:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://qiruifu.github.io/</loc><lastmod>2024-06-18T15:04:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://qiruifu.github.io/homepage/</loc><priority>0</priority></url><url>
+            <loc>http://qiruifu.github.io/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://qiruifu.github.io/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

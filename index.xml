@@ -1,30 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>My Digital Garden</title>
-    <link>https://qiruifu.github.io/</link>
-    <description>Recent content on My Digital Garden</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Nigalya Ponya ©</copyright>
-    <lastBuildDate>Tue, 18 Jun 2024 15:04:32 +0800</lastBuildDate><atom:link href="https://qiruifu.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>First</title>
-      <link>https://qiruifu.github.io/blogs/first/</link>
-      <pubDate>Tue, 18 Jun 2024 15:04:32 +0800</pubDate>
-      
-      <guid>https://qiruifu.github.io/blogs/first/</guid>
-      <description>666 Link copied&#39;);setTimeout(() = { document.querySelectorAll(&#39;.link-copied&#39;).forEach(el = el.remove()); }, 3000);&#34;    I am trying here</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://qiruifu.github.io/homepage/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://qiruifu.github.io/homepage/</guid>
-      <description>Qirui FU Link copied&#39;);setTimeout(() = { document.querySelectorAll(&#39;.link-copied&#39;).forEach(el = el.remove()); }, 3000);&#34;    I am a bacholer student in Nanjing University.</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Qirui FU</title>
+        <link>http://qiruifu.github.io/</link>
+        <description>This is my cool site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui FU)</managingEditor>
+            <webMaster>fu_qirui@foxmail.com (Qirui FU)</webMaster><lastBuildDate>Tue, 18 Jun 2024 15:04:32 &#43;0800</lastBuildDate>
+            <atom:link href="http://qiruifu.github.io/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
 </rss>
