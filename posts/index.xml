@@ -3,12 +3,11 @@
         <title>All Posts - Qirui FU</title>
         <link>http://QiruiFU.github.io/posts/</link>
         <description>All Posts | Qirui FU</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui FU)</managingEditor>
-            <webMaster>fu_qirui@foxmail.com (Qirui FU)</webMaster><lastBuildDate>Tue, 18 Jun 2024 15:04:32 &#43;0800</lastBuildDate><atom:link href="http://QiruiFU.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 Jun 2024 15:04:32 &#43;0800</lastBuildDate><atom:link href="http://QiruiFU.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>First</title>
     <link>http://QiruiFU.github.io/first/</link>
     <pubDate>Tue, 18 Jun 2024 15:04:32 &#43;0800</pubDate>
-    <author>Qirui FU</author>
+    <author>Author</author>
     <guid>http://QiruiFU.github.io/first/</guid>
     <description><![CDATA[666 I am trying here]]></description>
 </item>
