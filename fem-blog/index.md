@@ -32,12 +32,12 @@ In FEM, a mesh is like a spring, we can calculate deformation of it and thus cal
 
 To be specific, we take an example of triangle mesh. At first, the mesh has no energy, we call it stay in "Reference".
 <p align = "center">
-<img src="X.png" width=50% />
+<img src="reference.png" width=50% />
 </p>
 
 During the simulation, the mesh has displacement, it becomes:
 <p align = "center">
-<img src="x.png" width=50% />
+<img src="current.png" width=50% />
 </p>
 
 We can define the relationship between $\mathbf{x}$ and $\mathbf{X}$ : $\mathbf{x} = \Phi(\mathbf{X})$. In linear FEM, we assume $\Phi$ is a linear function, so $\mathbf{x = FX + b}$. Then we can calculate $\mathbf{F = [x_1-x_0, x_2-x_0][X_1-X_0, X_2-X_0]^{-1}}$, where $\mathbf{F}$ is a $2\times 2$ matrix.
