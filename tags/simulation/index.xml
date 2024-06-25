@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Simulation - Tag - Qirui FU</title>
+        <link>http://qiruifu.github.io/tags/simulation/</link>
+        <description>Simulation - Tag - Qirui FU</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui FU)</managingEditor>
+            <webMaster>fu_qirui@foxmail.com (Qirui FU)</webMaster><lastBuildDate>Tue, 25 Jun 2024 20:40:25 &#43;0800</lastBuildDate><atom:link href="http://qiruifu.github.io/tags/simulation/" rel="self" type="application/rss+xml" /><item>
+    <title>FEM for Simulating Elatomer</title>
+    <link>http://qiruifu.github.io/fem-blog/</link>
+    <pubDate>Tue, 25 Jun 2024 20:40:25 &#43;0800</pubDate>
+    <author>Qirui FU</author>
+    <guid>http://qiruifu.github.io/fem-blog/</guid>
+    <description><![CDATA[Finite Elements Method for Simulating Elastomer What do we do in simulating spring-mass system? Recall what we did in simulating Spring-Mass system:
+  Firstly, we describe deformation of springs using $\mathbf{F} = \frac{\mathbf{x}_1 - \mathbf{x}_2}{l_0}$. Something noticable here is that $\mathbf{F}$ is a vector and it is related to rotation of springs.
+  Then, we define strain $G = |\mathbf{F}| - 1$. The purpose of $G$ is that it is a scale and only related to stretch and contraction of springs.]]></description>
+</item>
+</channel>
+</rss>

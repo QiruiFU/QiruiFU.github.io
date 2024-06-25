@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>FEM for Simulating Elatomer - Qirui FU</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="FEM for Simulating Elatomer" />
+<meta property="og:description" content="Finite Elements Method for Simulating Elastomer What do we do in simulating spring-mass system? Recall what we did in simulating Spring-Mass system:
+  Firstly, we describe deformation of springs using $\mathbf{F} = \frac{\mathbf{x}_1 - \mathbf{x}_2}{l_0}$. Something noticable here is that $\mathbf{F}$ is a vector and it is related to rotation of springs.
+  Then, we define strain $G = |\mathbf{F}| - 1$. The purpose of $G$ is that it is a scale and only related to stretch and contraction of springs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://qiruifu.github.io/fem-blog/" /><meta property="og:image" content="http://qiruifu.github.io/fem-blog/featured-image.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-06-25T20:40:25+08:00" />
+<meta property="article:modified_time" content="2024-06-25T20:40:25+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://qiruifu.github.io/fem-blog/featured-image.jpg"/>
+<meta name="twitter:title" content="FEM for Simulating Elatomer"/>
+<meta name="twitter:description" content="Finite Elements Method for Simulating Elastomer What do we do in simulating spring-mass system? Recall what we did in simulating Spring-Mass system:
+  Firstly, we describe deformation of springs using $\mathbf{F} = \frac{\mathbf{x}_1 - \mathbf{x}_2}{l_0}$. Something noticable here is that $\mathbf{F}$ is a vector and it is related to rotation of springs.
+  Then, we define strain $G = |\mathbf{F}| - 1$. The purpose of $G$ is that it is a scale and only related to stretch and contraction of springs."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://qiruifu.github.io/fem-blog/" /><link rel="next" href="http://qiruifu.github.io/first-blog/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "FEM for Simulating Elatomer",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/qiruifu.github.io\/fem-blog\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "http:\/\/qiruifu.github.io\/fem-blog\/featured-image.jpg",
+                            "width":  638 ,
+                            "height":  388 
+                        }],"genre": "posts","keywords": "Simulation","wordcount":  639 ,
+        "url": "http:\/\/qiruifu.github.io\/fem-blog\/","datePublished": "2024-06-25T20:40:25+08:00","dateModified": "2024-06-25T20:40:25+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Qirui FU"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Qirui FU">Qirui FU</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/homepage/"> QiruiFU </a><a class="menu-item" href="/cv.pdf"> CV </a><a class="menu-item" href="/posts/"> Blogs </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Qirui FU">Qirui FU</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/homepage/" title="">QiruiFU</a><a class="menu-item" href="/cv.pdf" title="">CV</a><a class="menu-item" href="/posts/" title="">Blogs</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">FEM for Simulating Elatomer</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Qirui FU</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-06-25">2024-06-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;639 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/fem-blog/featured-image.jpg"
+        data-srcset="/fem-blog/featured-image.jpg, /fem-blog/featured-image.jpg 1.5x, /fem-blog/featured-image.jpg 2x"
+        data-sizes="auto"
+        alt="/fem-blog/featured-image.jpg"
+        title="/fem-blog/featured-image.jpg" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-do-we-do-in-simulating-spring-mass-system">What do we do in simulating spring-mass system?</a></li>
+    <li><a href="#so-what-we-are-going-to-do-in-fem">So what we are going to do in FEM?</a></li>
+    <li><a href="#results">Results</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="finite-elements-method-for-simulating-elastomer">Finite Elements Method for Simulating Elastomer</h1>
+<h2 id="what-do-we-do-in-simulating-spring-mass-system">What do we do in simulating spring-mass system?</h2>
+<p>Recall what we did in simulating Spring-Mass system:</p>
+<ul>
+<li>
+<p>Firstly, we describe deformation of springs using $\mathbf{F} = \frac{\mathbf{x}_1 - \mathbf{x}_2}{l_0}$. Something noticable here is that $\mathbf{F}$ is a vector and it is related to rotation of springs.</p>
+</li>
+<li>
+<p>Then, we define strain $G = |\mathbf{F}| - 1$. The purpose of $G$ is that it is a scale and only related to stretch and contraction of springs. So it is exactly what matters in calculating energy.</p>
+</li>
+<li>
+<p>After describing deformation, we use $ \Psi = \mu G^2 = \mu (\frac{\mathbf{x}_1 - \mathbf{x}_2}{l_0}-1)^2 $ to show the potential energy of $dm$ , where the $\mu$ is Young&rsquo;s modulus. Actually, the relationship between deformation and energy is found out by physicians (specifically, Hooke), at most time we only use it.</p>
+</li>
+<li>
+<p>So, the total energy of whole spring is $E = \Psi l_0 = \frac{1}{2}\frac{2\mu}{l_0}(|\mathbf{x}_1-\mathbf{x}_2|-l_0)^2$, where the $\frac{2\mu}{l_0}$ is $k$, which we&rsquo;re familiar with in physics class.</p>
+</li>
+<li>
+<p>At last, we use $F = -\frac{\partial E}{\partial \mathbf{x}}$ to calculate the force of two points of spring. Having force, we can advance the points and finish simulating.</p>
+</li>
+</ul>
+<p>An important thing is, density of energy $\Psi$ is assumed to be equally distributed in the spring, so we can calculate energy using $E = \Psi l_0$.</p>
+<h2 id="so-what-we-are-going-to-do-in-fem">So what we are going to do in FEM?</h2>
+<p>Actually, like spring-mass system, in FEM we devide the whole project into different &ldquo;mesh&rdquo;. In 2D simulation we always use triangular and in 3D simulation we always use tetrahedron.</p>
+<p align = "center">
+<img src="glasses.png" width=70% />
+<br>
+glasses divided by meshs
+</p>
+<p>In FEM, a mesh is like a spring, we can calculate deformation of it and thus calculate energy of it. You can consider a mesh as a high-dimension spring.</p>
+<p>To be specific, we take an example of triangle mesh. At first, the mesh has no energy, we call it stay in &ldquo;Reference&rdquo;.</p>
+<p align = "center">
+<img src="X.png" width=50% />
+</p>
+<p>During the simulation, the mesh has displacement, it becomes:</p>
+<p align = "center">
+<img src="x.png" width=50% />
+</p>
+<p>We can define the relationship between $\mathbf{x}$ and $\mathbf{X}$ : $\mathbf{x} = \Phi(\mathbf{X})$. In linear FEM, we assume $\Phi$ is a linear function, so $\mathbf{x = FX + b}$. Then we can calculate $\mathbf{F = [x_1-x_0, x_2-x_0][X_1-X_0, X_2-X_0]^{-1}}$, where $\mathbf{F}$ is a $2\times 2$ matrix.</p>
+<p>Then, we need a strain $\mathbf{G}$ to eliminate rotation and advecton in $\mathbf{F}$. In my code, I use $\mathbf{G = \frac{1}{2}(F^TF-I)}$, which is called Green Strain.</p>
+<p>Next, we should calculate density of energy $\Psi$ in the mesh. In my code I use StVK model, which says $\Psi = \mu ||\mathbf{G}||_F^2 + \frac{\lambda}{2}tr(\mathbf{G})^2$. In this model, $\mu = \frac{k}{2(1+\nu)}, \lambda=\frac{k\nu}{(1+\nu)(1-2\nu)}$, where $k$ is Young&rsquo;s modulus and $\nu$ is Poisson&rsquo;s ratio.</p>
+<p>With the same assumption in spring-mass system, we can calculate $E = V\Psi$. Then we can use $-\frac{\partial E}{\partial \mathbf{x}}$ to calculate force at vertices of triangular. But here is a problem: what is $\frac{\partial E}{\partial \mathbf{x}}$ ? To be honest, it is really difficult to deduce the final result. In the future I will put it in the Appendix, but now I can tell you the result directly:
+$$
+\frac{\partial E}{\partial \mathbf{x}} = VP[\mathbf{X}_2-\mathbf{X}_0, \mathbf{X}_1-\mathbf{X}_0]^{-T}
+$$
+where $P = FG$, which is called Piola-Kirchhoff stress.</p>
+<p>After caculating force, the main body of simulating is finished.</p>
+<h2 id="results">Results</h2>
+<p>To summarize, the route of the algorithm is similar with simulating spring-mass system. But the FEM is not as simple as I write here. It can also be used to simulate fluid and other phenomenon. And in this article I use some conclusions in continuum mechanics. To research in such field is also a challengable task.</p>
+<p>You can see my code on <a href="https://github.com/QiruiFU/Taichi-simulation/blob/main/fem.py" target="_blank" rel="noopener noreffer ">github</a>. The input is .msh file, which can be opened in Gmesh. The output is .vtk files in a sequence, which can be visualized in ParaView.</p>
+<p>The result of my code has been published at <a href="https://www.bilibili.com/video/BV16q3GexE8D" target="_blank" rel="noopener noreffer ">bilibili</a>. I get all input files from <a href="https://github.com/Yixin-Hu/TetWild" target="_blank" rel="noopener noreffer ">TetWild</a>.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-06-25</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/fem-blog/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://qiruifu.github.io/fem-blog/" data-title="FEM for Simulating Elatomer" data-hashtags="Simulation"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://qiruifu.github.io/fem-blog/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://qiruifu.github.io/fem-blog/" data-title="FEM for Simulating Elatomer"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/simulation/">Simulation</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/first-blog/" class="next" rel="next" title="First Blog Here">First Blog Here<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Qirui FU</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
