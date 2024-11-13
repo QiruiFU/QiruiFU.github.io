@@ -1,7 +1,7 @@
-# FEM for Simulating Elatomer
+# FEM for Simulating Elastic Body
 
 
-# Finite Elements Method for Simulating Elastomer
+# Finite Elements Method for Simulating Elastic Body
 
 ## What do we do in simulating spring-mass system?
 

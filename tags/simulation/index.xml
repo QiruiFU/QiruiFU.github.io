@@ -4,13 +4,22 @@
         <link>http://qiruifu.github.io/tags/simulation/</link>
         <description>Simulation - Tag - Qirui FU</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui FU)</managingEditor>
-            <webMaster>fu_qirui@foxmail.com (Qirui FU)</webMaster><lastBuildDate>Tue, 25 Jun 2024 20:40:25 &#43;0800</lastBuildDate><atom:link href="http://qiruifu.github.io/tags/simulation/" rel="self" type="application/rss+xml" /><item>
-    <title>FEM for Simulating Elatomer</title>
+            <webMaster>fu_qirui@foxmail.com (Qirui FU)</webMaster><lastBuildDate>Tue, 12 Nov 2024 14:26:52 -0500</lastBuildDate><atom:link href="http://qiruifu.github.io/tags/simulation/" rel="self" type="application/rss+xml" /><item>
+    <title>Conjugate Gradient Method</title>
+    <link>http://qiruifu.github.io/cg-blog/</link>
+    <pubDate>Tue, 12 Nov 2024 14:26:52 -0500</pubDate>
+    <author>Qirui FU</author>
+    <guid>http://qiruifu.github.io/cg-blog/</guid>
+    <description><![CDATA[Conjugate Gradient Method in Solving Linear Equation System Linear Equation System In fluid simulation, sometimes we need to solve a Linear Equation System like doing projection in Eulerian fluid. A linear Equation System can be written as a matrix form: $$ Ax = b $$
+where $A$ is a $N\times N$ matrix and $x,b$ are $N\times 1$ vectors. Actually, we have a lot of methods to solve this problem, like Gauss-Seidel iteration, Gaussian elimination, etc.]]></description>
+</item>
+<item>
+    <title>FEM for Simulating Elastic Body</title>
     <link>http://qiruifu.github.io/fem-blog/</link>
     <pubDate>Tue, 25 Jun 2024 20:40:25 &#43;0800</pubDate>
     <author>Qirui FU</author>
     <guid>http://qiruifu.github.io/fem-blog/</guid>
-    <description><![CDATA[Finite Elements Method for Simulating Elastomer What do we do in simulating spring-mass system? Recall what we did in simulating Spring-Mass system:
+    <description><![CDATA[Finite Elements Method for Simulating Elastic Body What do we do in simulating spring-mass system? Recall what we did in simulating Spring-Mass system:
   Firstly, we describe deformation of springs using $\mathbf{F} = \frac{\mathbf{x}_1 - \mathbf{x}_2}{l_0}$. Something noticable here is that $\mathbf{F}$ is a vector and it is related to rotation of springs.
   Then, we define strain $G = |\mathbf{F}| - 1$. The purpose of $G$ is that it is a scale and only related to stretch and contraction of springs.]]></description>
 </item>
