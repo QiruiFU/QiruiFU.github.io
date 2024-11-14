@@ -35,13 +35,13 @@ $$
 
 if $(a,b) = 0$ , we say $a$ and $b$ are orthogonal. Now, we define "A-orthogonal". We say $a$ and $b$ are A-orghogonal if
 $$
-(a,b)_A = a^TAb = 0
+(a,b)^A = a^TAb = 0
 $$
 
 
 With A-orthogonal vectors $\{a_1, ..., a_n\}$ , we can easily find the represent of solution $x$ in such a base:
 $$
-x = \sum_{k=1}^n \frac{(a_k, b)}{(a_k, a_k)_A} a_k
+x = \sum_{k=1}^n \frac{(a_k, b)}{(a_k, a_k)^A} a_k
 $$
 
 So the problem is: how to find the A-orthogonal vectors? If you're good at linear algebra, you might say finding the eigen vectors of A. But it's not a good idea because calculating eigen vectors is even more difficult than solving the equations. So, we choose to generate them dynamically : 
@@ -50,13 +50,13 @@ So the problem is: how to find the A-orthogonal vectors? If you're good at linea
 
 2. To generate $a_2$, we choose an arbitrary vector $t_2$ which is not parallel with $a_1$ . Then we can get $a_1$ by:
 $$
-a_1 = t_2 - \frac{(t_2, a_1)_A}{(a_1, a_1)_A} a_1
+a_1 = t_2 - \frac{(t_2, a_1)^A}{(a_1, a_1)^A} a_1
 $$
 
 3. For $a_k$, we have an arbitrary vector $t_k$ which is not parallel with $a_i (1\leq i < k)$ . Then we have :
 
 $$
-a_k = t_k - \sum_{i=1}^{k-1} \frac{(t_k, a_i)_A}{(a_i, a_i)_A} a_i
+a_k = t_k - \sum_{i=1}^{k-1} \frac{(t_k, a_i)^A}{(a_i, a_i)^A} a_i
 $$
 
 In fact, method above is a Gram–Schmidt process in A-orthogonal. But it's not efficient enough in solving the linear equation, we can even make it better.
@@ -65,19 +65,19 @@ In fact, method above is a Gram–Schmidt process in A-orthogonal. But it's not 
 
 In last section, we generate $t_k$ randomly in every iteration. But if we combine it with deepest descent method, we can have a better verison. If we use $-\nabla f = b - Ax_{k-1}$ as $t_k$ , we can prove (by induction) that: 
 $$
-a_k = t_k - \frac{(t_k, a_{k-1})_A}{(a_{k-1}, a_{k-1})_A} a_{k-1}
+a_k = t_k - \frac{(t_k, a_{k-1})^A}{(a_{k-1}, a_{k-1})^A} a_{k-1}
 $$
 
 is A-orthogonal with $a_i (1\leq i < k)$ , where $x_{k-1}$ is:
 
 $$
-x = \sum_{i=1}^{k-1} \frac{(a_i, b)}{(a_i, a_i)_A} a_i
+x = \sum_{i=1}^{k-1} \frac{(a_i, b)}{(a_i, a_i)^A} a_i
 $$
 
 which means we don't need to run the loop to find the $a_k$ .
 
 Now, we have the algrithm for CG :
-```
+``` python
 have a initial guess x
 t = b - A * x
 a = t
@@ -101,10 +101,10 @@ Right now, we have two different aspects to see the CG method:
 
 Actually, in practice we don't need to run all $n$ loops. At most time if $b - Ax$ is small enough we can break the loop. If $A$ is ill-conditioned, we will have more steps to make it small enough, so we have some pre-conditioner to make matrix $A$ more "health".
 
-reference:
+### Reference:
 
 * [An Introduction to the Conjugate Gradient Method Without the Agonizing Pain](https://www.cs.cmu.edu/~quake-papers/painless-conjugate-gradient.pdf)
 
 * An English video : [Youtube](https://www.youtube.com/watch?v=h4cG8jLGmKg)
 
-* A Mandarian video from Soochow University : [Bilibili](https://www.bilibili.com/video/BV16a4y1t76z)
+* A Mandarin video from Soochow University : [Bilibili](https://www.bilibili.com/video/BV16a4y1t76z)
