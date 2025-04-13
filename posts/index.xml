@@ -4,7 +4,16 @@
         <link>http://qiruifu.github.io/posts/</link>
         <description>All Posts | Qirui Fu</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</managingEditor>
-            <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster><lastBuildDate>Tue, 12 Nov 2024 14:26:52 -0500</lastBuildDate><atom:link href="http://qiruifu.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster><lastBuildDate>Sat, 12 Apr 2025 21:05:25 -0400</lastBuildDate><atom:link href="http://qiruifu.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Implicit MPM</title>
+    <link>http://qiruifu.github.io/implicit-mpm-blog/</link>
+    <pubDate>Sat, 12 Apr 2025 21:05:25 -0400</pubDate>
+    <author>Qirui (Chiray) Fu</author>
+    <guid>http://qiruifu.github.io/implicit-mpm-blog/</guid>
+    <description><![CDATA[Implicit Update Scheme for MPM The main purpose of this article is to talk about how to apply implicit update in MPM framework. To know more details about MPM, you can read This SIGGRAPH 2016 Course Notes and A Material Point Method For Snow Simulation (Alexey Stomakhin et al., 2013) .
+Notations Framework of MPM Currently, I prefer to use APIC scheme to transfer velocity between particles and grids. The framework I always use is listed here:]]></description>
+</item>
+<item>
     <title>Conjugate Gradient Method</title>
     <link>http://qiruifu.github.io/cg-blog/</link>
     <pubDate>Tue, 12 Nov 2024 14:26:52 -0500</pubDate>
