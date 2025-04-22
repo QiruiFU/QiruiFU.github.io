@@ -5,8 +5,6 @@
 
 The main purpose of this article is to talk about how to apply implicit update in MPM framework. To know more details about MPM, you can read [This SIGGRAPH 2016 Course Notes](https://www.math.ucla.edu/~cffjiang/research/mpmcourse/mpmcourse.pdf) and [A Material Point Method For Snow Simulation (Alexey Stomakhin et al., 2013)](https://www.disneyanimation.com/publications/a-material-point-method-for-snow-simulation/) .
 
-## Notations
-
 ## Framework of MPM
 
 Currently, I prefer to use APIC scheme to transfer velocity between particles and grids. The framework I always use is listed here:
@@ -17,21 +15,25 @@ Currently, I prefer to use APIC scheme to transfer velocity between particles an
 * **Advect Particles**
 * **Update Deformation Gradient $\mathbf{F}$ on Particles**
 
-The main difference between explicit and implicit MPM is *"Update Velocities on Grids"* step. In explicit MPM, we use $u_{i}^{n+1}=u_{i}^{n} + \Delta tm_i^{-1}(\mathbf{f}_{i}^{n}+m\mathbf{g})$ in this step, where $\mathbf{f}_i$ is the elastic force and $m\mathbf{g}$ is gravity. In most implementations, to reduce the computing time, we always compute $\mathbf{f}_i^n$ in P2G step:
+The main difference between explicit and implicit MPM is *"Update Velocities on Grids"* step. In explicit MPM, we use $u_{i}^{n+1}=u_{i}^{n} + \Delta tm_i^{-1}(\mathbf{f}_{i}^{n}+m_i\mathbf{g})$ in this step, where $\mathbf{f}_i$ is the elastic force and $m_i\mathbf{g}$ is gravity. In most implementations, to reduce the computing time, we always compute $\mathbf{f}_i^n$ in P2G step:
 
 $$
 \mathbf{f}^n_i = \sum_p V_p^0 \frac{\partial \Psi}{\partial \mathbf{F}} (F_p^n)^T \nabla w_{ip}
 $$
 
-## Implicit Update on Grid
+## Semi-Implicit Update on Grid
+### What We Need to Do in Implicit MPM
 
-In implicit MPM, we use $u_{i}^{n+1}=u_{i}^{n} + \Delta tm_i^{-1}( \mathbf{f}\_{i}^{n+1} +m\mathbf{g})$ to update velocities on grids. Since :
+In implicit MPM, we use $u_{i}^{n+1}=u_{i}^{n} + \Delta tm_i^{-1}( \mathbf{f}\_{i}^{n+1} +m\mathbf{g})$ to update velocities on grids. Since we can use $\frac{\partial\mathbf{f}}{\partial t} \Delta t$ to estimate $\Delta\mathbf{f}$:
+
 $$
 \begin{align*}
 \mathbf{f}\_{i}^{n+1} &= \mathbf{f}\_{i}^{n} + \Delta t \sum_j \frac{\partial\mathbf{f}_i^n}{\partial\hat{x}_j} \frac{\partial\hat{x}_j}{\partial t} \\\\
 &= \mathbf{f}\_{i}^{n} + \Delta t \sum_j \frac{\partial\mathbf{f}_i^n}{\partial\hat{x}_j}v_j^{n+1}
 \end{align*}
 $$
+
+This method is called Semi-Implicit MPM.
 
 Then we have:
 
@@ -59,7 +61,7 @@ $$
 where $\mathbf{u}^{n+1}$ and $\mathbf{u}^*$ are two really huge vectors and $\mathbf{M}$ is a matrix. Right now, our goal is to solve this equation. Since size of $\mathbf{M}$ is $(3N)\times(3N)$ in our problem ($N$ is the number of grids), we cannot represent $\mathbf{M}$ explicitly. But we can compute the effect when it's applied onto a vector, which means for a give $\mathbf{u}$, we can give you $\mathbf{Mu}$. In this way, we can represent $\mathbf{M}$ and solve this equation. Look at the left hand side of our equation, we only need to compute $\delta \mathbf{f}$ to get the result of  $\mathbf{Mu}$.
 
 
-## How to Compute $\delta \mathbf{f}$
+### How to Compute $\delta \mathbf{f}$
 
 As the computation of $\mathbf{f}$ has benn shown before, we have:
 $$
@@ -95,7 +97,7 @@ Second, $J\mathbf{F}^{-T}$ is called *cofactor matrix* of matrix $\mathbf{F}$. I
 <img src="cof.jpg" width=80% />
 </p>
 
-This result is calculated in Matlab. Additionally, for each entry of $\delta(J\mathbf{F}^{-T})$, it's value equals to $\delta$ value of that entry of $J\mathbf{F}^{-T}$ . For example, $\delta(J\mathbf{F}^{-T})\_{00} = \delta\mathbf{F}\_{11}\delta\mathbf{F}\_{22}-\delta\mathbf{F}\_{12}\delta\mathbf{F}\_{21}$ . In this method, we can calculate $J\mathbf{F}^{-T}$ and $\delta(J\mathbf{F}^{-T})$
+This result is calculated in Matlab. Additionally, for each entry of $\delta(J\mathbf{F}^{-T})$, it's value equals to $\delta$ value of that entry of $J\mathbf{F}^{-T}$ . For example, $\delta(J\mathbf{F}^{-T})\_{00} = \delta\mathbf{F}\_{11}\mathbf{F}\_{22} + \mathbf{F}\_{11}\delta\mathbf{F}\_{22} - \delta\mathbf{F}\_{12}\mathbf{F}\_{21} - \mathbf{F}\_{12}\delta\mathbf{F}\_{21}$ . In this method, we can calculate $J\mathbf{F}^{-T}$ and $\delta(J\mathbf{F}^{-T})$
 
 The final problem is $\delta\mathbf{R}$. We have:
 $$
@@ -149,7 +151,36 @@ and sovle this easier equation.
 
 After getting $a, b, c$, we have $\mathbf{R}^T\delta\mathbf{R}$. Just pre-multiply $\mathbf{R}$ on it, we can have $\delta\mathbf{R}$.
 
-## Summary
-By now, you can find the process of implicit update of MPM is really complicated. A main reference of this article is this repo: [snow](https://github.com/Azmisov/snow/tree/master). You can find more details of mathmatics and code in it.
 
-Another important material is [Optimization Integrator for Large Time Steps (Theodore F. et al., 2015)](https://www.math.ucdavis.edu/~jteran/papers/GSSJT15.pdf) . I am not very sure what's the difference between two kinds of methods.
+## Implicit MPM
+
+We have shown in the last section that in implicit MPM, we are solving:
+$$
+u^{n+1}_i = (u^n_i + \Delta t \mathbf{g}) + \Delta t m_i^{-1}\mathbf{f}^{n+1}_i
+$$
+
+At this time, we define $u^*=u^n_i + \Delta t \mathbf{g}$. So we are trying to solve a non-linear equation:
+$$
+m_i (u-u^\*) - \mathbf{f}_i^{n+1} \Delta t= 0
+$$
+
+Since $\mathbf{f}$ is also a function of $u$, this equation is really hard to solve. In implicit MPM, instead of estimating $\mathbf{f}^{n+1}$ , we convert this task into an optimization problem. If we define:
+$$
+E(\mathbf{u}) = \frac{1}{2}(\mathbf{u}-\mathbf{u}^\*)^T\mathbf{M}(\mathbf{u}-\mathbf{u}^\*) + \Phi(\mathbf{x}^n + \Delta t \mathbf{u})
+$$
+
+We could find that:
+$$
+\nabla_\mathbf{u}E = \mathbf{M}(\mathbf{u}-\mathbf{u}^\*) + \Delta t \frac{\partial \Phi}{\partial\mathbf{x}^{n+1}} = \mathbf{M}(\mathbf{u}-\mathbf{u}^\*) - \Delta t \mathbf{f}^{n+1}
+$$
+
+Thus, our goal is to find $\nabla_\mathbf{u}E=0$, or minimize $E(\mathbf{u})$ . Of course, the energy function $\Phi$ should have some properties, at least the potential energy function of $\mathbf{f}$ should exist. Some discussion about that can be found in : [Optimization Integrator for Large Time Steps (Theodore F. et al., 2015)](https://www.math.ucdavis.edu/~jteran/papers/GSSJT15.pdf) . One thing noticable here is we write $\mathbf{u}$ as a big vector. For example, if we have $1000$ active grids in 3D , then shape of $\mathbf{u}$ and $\nabla_\mathbf{u}E$ are both $(3000\times 1)$ .
+
+### Optimization Methods
+
+Firstly, for any given $\mathbf{u}$, we can compute the $\nabla_\mathbf{u}E$ easily like we did in explicit MPM. Based on it, an intuitive idea is to use gradient descent method to minimize $E(\mathbf{u})$.
+
+A better way is Newton's Method. We all know that Newton's Method is an efficient iterative method for solving equations. Just like how we update $x$ in a scaler equation: $\Delta x = -\frac{f(x)}{f'(x)}$, in each iteration, $\Delta\mathbf{u} = -\mathbf{H}^{-1}\nabla E$, where $\mathbf{H} = \nabla(\nabla E)$ is a matrix. Newton's Method can converge quickly, but the drawback is we need to compute $\mathbf{H}$ and solve a linear equation $\mathbf{H}\Delta\mathbf{u}=-\nabla E$ in every single iteration. One interesting thing is that if you run Newton's Method for just one iteration, it's equivalent to semi-impicit MPM.
+
+Another method is called L-BFGS, in which we don't have to compute $\mathbf{H}$ explicitly. I don't really know the theoretical details for this method right now, but the workflow of it can be found easily online.
+

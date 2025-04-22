@@ -13,7 +13,7 @@
     <author>Qirui (Chiray) Fu</author>
     <guid>http://qiruifu.github.io/implicit-mpm-blog/</guid>
     <description><![CDATA[Implicit Update Scheme for MPM The main purpose of this article is to talk about how to apply implicit update in MPM framework. To know more details about MPM, you can read This SIGGRAPH 2016 Course Notes and A Material Point Method For Snow Simulation (Alexey Stomakhin et al., 2013) .
-Notations Framework of MPM Currently, I prefer to use APIC scheme to transfer velocity between particles and grids. The framework I always use is listed here:]]></description>
+Framework of MPM Currently, I prefer to use APIC scheme to transfer velocity between particles and grids. The framework I always use is listed here:]]></description>
 </item>
 <item>
     <title>Conjugate Gradient Method</title>

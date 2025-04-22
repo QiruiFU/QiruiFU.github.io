@@ -34,7 +34,7 @@
                             "url": "http:\/\/qiruifu.github.io\/implicit-mpm-blog\/featured-image.jpg",
                             "width":  1834 ,
                             "height":  850 
-                        }],"genre": "posts","keywords": "simulation","wordcount":  913 ,
+                        }],"genre": "posts","keywords": "simulation","wordcount":  1246 ,
         "url": "http:\/\/qiruifu.github.io\/implicit-mpm-blog\/","datePublished": "2025-04-12T21:05:25-04:00","dateModified": "2025-04-12T21:05:25-04:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,8 +108,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Implicit MPM</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Qirui (Chiray) Fu</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-04-12">2025-04-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;913 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-04-12">2025-04-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1246 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -124,16 +124,22 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#notations">Notations</a></li>
     <li><a href="#framework-of-mpm">Framework of MPM</a></li>
-    <li><a href="#implicit-update-on-grid">Implicit Update on Grid</a></li>
-    <li><a href="#how-to-compute-delta-mathbff">How to Compute $\delta \mathbf{f}$</a></li>
-    <li><a href="#summary">Summary</a></li>
+    <li><a href="#semi-implicit-update-on-grid">Semi-Implicit Update on Grid</a>
+      <ul>
+        <li><a href="#what-we-need-to-do-in-implicit-mpm">What We Need to Do in Implicit MPM</a></li>
+        <li><a href="#how-to-compute-delta-mathbff">How to Compute $\delta \mathbf{f}$</a></li>
+      </ul>
+    </li>
+    <li><a href="#implicit-mpm">Implicit MPM</a>
+      <ul>
+        <li><a href="#optimization-methods">Optimization Methods</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h1 id="implicit-update-scheme-for-mpm">Implicit Update Scheme for MPM</h1>
 <p>The main purpose of this article is to talk about how to apply implicit update in MPM framework. To know more details about MPM, you can read <a href="https://www.math.ucla.edu/~cffjiang/research/mpmcourse/mpmcourse.pdf" target="_blank" rel="noopener noreffer ">This SIGGRAPH 2016 Course Notes</a> and <a href="https://www.disneyanimation.com/publications/a-material-point-method-for-snow-simulation/" target="_blank" rel="noopener noreffer ">A Material Point Method For Snow Simulation (Alexey Stomakhin et al., 2013)</a> .</p>
-<h2 id="notations">Notations</h2>
 <h2 id="framework-of-mpm">Framework of MPM</h2>
 <p>Currently, I prefer to use APIC scheme to transfer velocity between particles and grids. The framework I always use is listed here:</p>
 <ul>
@@ -143,18 +149,20 @@
 <li><strong>Advect Particles</strong></li>
 <li><strong>Update Deformation Gradient $\mathbf{F}$ on Particles</strong></li>
 </ul>
-<p>The main difference between explicit and implicit MPM is <em>&ldquo;Update Velocities on Grids&rdquo;</em> step. In explicit MPM, we use $u_{i}^{n+1}=u_{i}^{n} + \Delta tm_i^{-1}(\mathbf{f}_{i}^{n}+m\mathbf{g})$ in this step, where $\mathbf{f}_i$ is the elastic force and $m\mathbf{g}$ is gravity. In most implementations, to reduce the computing time, we always compute $\mathbf{f}_i^n$ in P2G step:</p>
+<p>The main difference between explicit and implicit MPM is <em>&ldquo;Update Velocities on Grids&rdquo;</em> step. In explicit MPM, we use $u_{i}^{n+1}=u_{i}^{n} + \Delta tm_i^{-1}(\mathbf{f}_{i}^{n}+m_i\mathbf{g})$ in this step, where $\mathbf{f}_i$ is the elastic force and $m_i\mathbf{g}$ is gravity. In most implementations, to reduce the computing time, we always compute $\mathbf{f}_i^n$ in P2G step:</p>
 <p>$$
 \mathbf{f}^n_i = \sum_p V_p^0 \frac{\partial \Psi}{\partial \mathbf{F}} (F_p^n)^T \nabla w_{ip}
 $$</p>
-<h2 id="implicit-update-on-grid">Implicit Update on Grid</h2>
-<p>In implicit MPM, we use $u_{i}^{n+1}=u_{i}^{n} + \Delta tm_i^{-1}( \mathbf{f}_{i}^{n+1} +m\mathbf{g})$ to update velocities on grids. Since :
-$$
+<h2 id="semi-implicit-update-on-grid">Semi-Implicit Update on Grid</h2>
+<h3 id="what-we-need-to-do-in-implicit-mpm">What We Need to Do in Implicit MPM</h3>
+<p>In implicit MPM, we use $u_{i}^{n+1}=u_{i}^{n} + \Delta tm_i^{-1}( \mathbf{f}_{i}^{n+1} +m\mathbf{g})$ to update velocities on grids. Since we can use $\frac{\partial\mathbf{f}}{\partial t} \Delta t$ to estimate $\Delta\mathbf{f}$:</p>
+<p>$$
 \begin{align*}
 \mathbf{f}_{i}^{n+1} &amp;= \mathbf{f}_{i}^{n} + \Delta t \sum_j \frac{\partial\mathbf{f}_i^n}{\partial\hat{x}_j} \frac{\partial\hat{x}_j}{\partial t} \\
 &amp;= \mathbf{f}_{i}^{n} + \Delta t \sum_j \frac{\partial\mathbf{f}_i^n}{\partial\hat{x}_j}v_j^{n+1}
 \end{align*}
 $$</p>
+<p>This method is called Semi-Implicit MPM.</p>
 <p>Then we have:</p>
 <p>$$
 \begin{align*}
@@ -175,7 +183,7 @@ $$
 \mathbf{M}\mathbf{u}^{n+1} = \mathbf{u}^*
 $$</p>
 <p>where $\mathbf{u}^{n+1}$ and $\mathbf{u}^*$ are two really huge vectors and $\mathbf{M}$ is a matrix. Right now, our goal is to solve this equation. Since size of $\mathbf{M}$ is $(3N)\times(3N)$ in our problem ($N$ is the number of grids), we cannot represent $\mathbf{M}$ explicitly. But we can compute the effect when it&rsquo;s applied onto a vector, which means for a give $\mathbf{u}$, we can give you $\mathbf{Mu}$. In this way, we can represent $\mathbf{M}$ and solve this equation. Look at the left hand side of our equation, we only need to compute $\delta \mathbf{f}$ to get the result of  $\mathbf{Mu}$.</p>
-<h2 id="how-to-compute-delta-mathbff">How to Compute $\delta \mathbf{f}$</h2>
+<h3 id="how-to-compute-delta-mathbff">How to Compute $\delta \mathbf{f}$</h3>
 <p>As the computation of $\mathbf{f}$ has benn shown before, we have:
 $$
 \begin{align*}
@@ -203,7 +211,7 @@ $$</p>
 <p align = "center">
 <img src="cof.jpg" width=80% />
 </p>
-<p>This result is calculated in Matlab. Additionally, for each entry of $\delta(J\mathbf{F}^{-T})$, it&rsquo;s value equals to $\delta$ value of that entry of $J\mathbf{F}^{-T}$ . For example, $\delta(J\mathbf{F}^{-T})_{00} = \delta\mathbf{F}_{11}\delta\mathbf{F}_{22}-\delta\mathbf{F}_{12}\delta\mathbf{F}_{21}$ . In this method, we can calculate $J\mathbf{F}^{-T}$ and $\delta(J\mathbf{F}^{-T})$</p>
+<p>This result is calculated in Matlab. Additionally, for each entry of $\delta(J\mathbf{F}^{-T})$, it&rsquo;s value equals to $\delta$ value of that entry of $J\mathbf{F}^{-T}$ . For example, $\delta(J\mathbf{F}^{-T})_{00} = \delta\mathbf{F}_{11}\mathbf{F}_{22} + \mathbf{F}_{11}\delta\mathbf{F}_{22} - \delta\mathbf{F}_{12}\mathbf{F}_{21} - \mathbf{F}_{12}\delta\mathbf{F}_{21}$ . In this method, we can calculate $J\mathbf{F}^{-T}$ and $\delta(J\mathbf{F}^{-T})$</p>
 <p>The final problem is $\delta\mathbf{R}$. We have:
 $$
 \begin{align*}
@@ -247,9 +255,28 @@ $$</p>
 </p>
 <p>and sovle this easier equation.</p>
 <p>After getting $a, b, c$, we have $\mathbf{R}^T\delta\mathbf{R}$. Just pre-multiply $\mathbf{R}$ on it, we can have $\delta\mathbf{R}$.</p>
-<h2 id="summary">Summary</h2>
-<p>By now, you can find the process of implicit update of MPM is really complicated. A main reference of this article is this repo: <a href="https://github.com/Azmisov/snow/tree/master" target="_blank" rel="noopener noreffer ">snow</a>. You can find more details of mathmatics and code in it.</p>
-<p>Another important material is <a href="https://www.math.ucdavis.edu/~jteran/papers/GSSJT15.pdf" target="_blank" rel="noopener noreffer ">Optimization Integrator for Large Time Steps (Theodore F. et al., 2015)</a> . I am not very sure what&rsquo;s the difference between two kinds of methods.</p>
+<h2 id="implicit-mpm">Implicit MPM</h2>
+<p>We have shown in the last section that in implicit MPM, we are solving:
+$$
+u^{n+1}_i = (u^n_i + \Delta t \mathbf{g}) + \Delta t m_i^{-1}\mathbf{f}^{n+1}_i
+$$</p>
+<p>At this time, we define $u^*=u^n_i + \Delta t \mathbf{g}$. So we are trying to solve a non-linear equation:
+$$
+m_i (u-u^*) - \mathbf{f}_i^{n+1} \Delta t= 0
+$$</p>
+<p>Since $\mathbf{f}$ is also a function of $u$, this equation is really hard to solve. In implicit MPM, instead of estimating $\mathbf{f}^{n+1}$ , we convert this task into an optimization problem. If we define:
+$$
+E(\mathbf{u}) = \frac{1}{2}(\mathbf{u}-\mathbf{u}^*)^T\mathbf{M}(\mathbf{u}-\mathbf{u}^*) + \Phi(\mathbf{x}^n + \Delta t \mathbf{u})
+$$</p>
+<p>We could find that:
+$$
+\nabla_\mathbf{u}E = \mathbf{M}(\mathbf{u}-\mathbf{u}^*) + \Delta t \frac{\partial \Phi}{\partial\mathbf{x}^{n+1}} = \mathbf{M}(\mathbf{u}-\mathbf{u}^*) - \Delta t \mathbf{f}^{n+1}
+$$</p>
+<p>Thus, our goal is to find $\nabla_\mathbf{u}E=0$, or minimize $E(\mathbf{u})$ . Of course, the energy function $\Phi$ should have some properties, at least the potential energy function of $\mathbf{f}$ should exist. Some discussion about that can be found in : <a href="https://www.math.ucdavis.edu/~jteran/papers/GSSJT15.pdf" target="_blank" rel="noopener noreffer ">Optimization Integrator for Large Time Steps (Theodore F. et al., 2015)</a> . One thing noticable here is we write $\mathbf{u}$ as a big vector. For example, if we have $1000$ active grids in 3D , then shape of $\mathbf{u}$ and $\nabla_\mathbf{u}E$ are both $(3000\times 1)$ .</p>
+<h3 id="optimization-methods">Optimization Methods</h3>
+<p>Firstly, for any given $\mathbf{u}$, we can compute the $\nabla_\mathbf{u}E$ easily like we did in explicit MPM. Based on it, an intuitive idea is to use gradient descent method to minimize $E(\mathbf{u})$.</p>
+<p>A better way is Newton&rsquo;s Method. We all know that Newton&rsquo;s Method is an efficient iterative method for solving equations. Just like how we update $x$ in a scaler equation: $\Delta x = -\frac{f(x)}{f'(x)}$, in each iteration, $\Delta\mathbf{u} = -\mathbf{H}^{-1}\nabla E$, where $\mathbf{H} = \nabla(\nabla E)$ is a matrix. Newton&rsquo;s Method can converge quickly, but the drawback is we need to compute $\mathbf{H}$ and solve a linear equation $\mathbf{H}\Delta\mathbf{u}=-\nabla E$ in every single iteration. One interesting thing is that if you run Newton&rsquo;s Method for just one iteration, it&rsquo;s equivalent to semi-impicit MPM.</p>
+<p>Another method is called L-BFGS, in which we don&rsquo;t have to compute $\mathbf{H}$ explicitly. I don&rsquo;t really know the theoretical details for this method right now, but the workflow of it can be found easily online.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
