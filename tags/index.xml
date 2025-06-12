@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - Qirui Fu</title>
+        <link>http://qiruifu.github.io/tags/</link>
+        <description>Tags - Tag - Qirui Fu</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</managingEditor>
+            <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster><lastBuildDate>Thu, 12 Jun 2025 11:07:15 -0400</lastBuildDate><atom:link href="http://qiruifu.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Simulation</title>
+    <link>http://qiruifu.github.io/tags/simulation/</link>
+    <pubDate>Thu, 12 Jun 2025 11:07:15 -0400</pubDate>
+    <author>Qirui (Chiray) Fu</author>
+    <guid>http://qiruifu.github.io/tags/simulation/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Life</title>
+    <link>http://qiruifu.github.io/tags/life/</link>
+    <pubDate>Tue, 18 Jun 2024 15:04:32 &#43;0800</pubDate>
+    <author>Qirui (Chiray) Fu</author>
+    <guid>http://qiruifu.github.io/tags/life/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

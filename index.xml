@@ -4,9 +4,19 @@
         <link>http://qiruifu.github.io/</link>
         <description>This is my cool site</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</managingEditor>
-            <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster><lastBuildDate>Sat, 12 Apr 2025 21:05:25 -0400</lastBuildDate>
+            <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster><lastBuildDate>Thu, 12 Jun 2025 11:07:15 -0400</lastBuildDate>
             <atom:link href="http://qiruifu.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Implicit MPM Misc</title>
+    <link>http://qiruifu.github.io/implicit-mpm-misc-blog/</link>
+    <pubDate>Thu, 12 Jun 2025 11:07:15 -0400</pubDate>
+    <author>Qirui (Chiray) Fu</author>
+    <guid>http://qiruifu.github.io/implicit-mpm-misc-blog/</guid>
+    <description><![CDATA[Some Other Things for Implicit MPM In the last blog, we talked about some basic things for implicit MPM. But there are also some details we should mention in this continued blog.
+Hessian Matrix In the last blog, we defined $E(\mathbf{u}) = \frac{1}{2}(\mathbf{u}-\mathbf{u^*})\mathbf{M}(\mathbf{u}-\mathbf{u^*}) + \Phi(\mathbf{x}^n+\Delta t \mathbf{u})$ as the energy for a system, our goal is to minimize it. We know the gradient of it is :
+$$ \nabla_\mathbf{u}E = \mathbf{M}(\mathbf{u}-\mathbf{u}^*) + \Delta t \frac{\partial \Phi}{\partial\mathbf{x}}|_{(\mathbf{x}^n+\Delta t \mathbf{u})} = \mathbf{M}(\mathbf{u}-\mathbf{u}^*) - \Delta t \mathbf{f}(\mathbf{x}^n+\Delta t \mathbf{u}) $$]]></description>
+</item>
+<item>
     <title>Implicit MPM</title>
     <link>http://qiruifu.github.io/implicit-mpm-blog/</link>
     <pubDate>Sat, 12 Apr 2025 21:05:25 -0400</pubDate>
@@ -31,8 +41,8 @@ where $A$ is a $N\times N$ matrix and $x,b$ are $N\times 1$ vectors. Actually, w
     <author>Qirui (Chiray) Fu</author>
     <guid>http://qiruifu.github.io/fem-blog/</guid>
     <description><![CDATA[Finite Elements Method for Simulating Elastic Body What do we do in simulating spring-mass system? Recall what we did in simulating Spring-Mass system:
-  Firstly, we describe deformation of springs using $\mathbf{F} = \frac{\mathbf{x}_1 - \mathbf{x}_2}{l_0}$. Something noticable here is that $\mathbf{F}$ is a vector and it is related to rotation of springs.
-  Then, we define strain $G = |\mathbf{F}| - 1$. The purpose of $G$ is that it is a scale and only related to stretch and contraction of springs.]]></description>
+Firstly, we describe deformation of springs using $\mathbf{F} = \frac{\mathbf{x}_1 - \mathbf{x}_2}{l_0}$. Something noticable here is that $\mathbf{F}$ is a vector and it is related to rotation of springs.
+Then, we define strain $G = |\mathbf{F}| - 1$. The purpose of $G$ is that it is a scale and only related to stretch and contraction of springs.]]></description>
 </item>
 <item>
     <title>First Blog Here</title>
