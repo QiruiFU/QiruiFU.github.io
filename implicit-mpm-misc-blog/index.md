@@ -24,10 +24,10 @@ $$
 \frac{\partial\Phi}{\partial\mathbf{x}\_i} = \sum_p V_p^0 \mathbf{P}(\mathbf{F}\')\mathbf{F}^T \nabla\omega_{ip}
 $$
 
-The $\mathbf{x}_i$ here means we are computing the entries $\\{i\times3, i\times3+1, i\times3+2\\}$ of $\frac{\partial\Phi}{\partial\mathbf{x}}$ . $\mathbf{F}\'$ here means "new deformation gradient", which is different from $\mathbf{F}$. Use the similar techniques to compute the derivative of this equation, we can have:
+The $\mathbf{x}_i$ here means we are computing the entries $\\{i\times3, i\times3+1, i\times3+2\\}$ of $\frac{\partial\Phi}{\partial\mathbf{x}}$ . $\mathbf{F}\'$ here means "new deformation gradient", which is different from $\mathbf{F}$. Use the similar techniques to compute the derivative of this equation, we have:
 
 $$
-\frac{\partial^2\Phi}{\partial\mathbf{x}\_i\partial\mathbf{x}\_j} = \sum_p (V_p^0 \frac{\partial\mathbf{P}}{\partial\mathbf{F}}(\mathbf{F}\')(\mathbf{F}^T\nabla\omega_{jp})(\mathbf{F}^T\nabla\omega_{ip})^T + V_p^0 \mathbf{P}(\mathbf{F}\')\mathbf{F}^T \nabla^2\omega_{ip}\delta_{ij})
+\frac{\partial^2\Phi}{\partial\mathbf{x}\_i\partial\mathbf{x}\_j} = \sum_p V_p^0 \frac{\partial\mathbf{P}}{\partial\mathbf{F}}(\mathbf{F}\')(\mathbf{F}^T\nabla\omega_{jp})(\mathbf{F}^T\nabla\omega_{ip})^T
 $$
 
 For each particle, it will generate a $81\times81$ hessian matrix, which is a submatrix of the whole $\nabla^2_\mathbf{u}E$, because it is connected to $27$ grids in 3D simulation. From the equation above, we know how to compute a $3\times3$ submatrix of that $81\times 81$ matrix because only 2 grids are evolved. Finally, the code for computing hessian matrix should be like:

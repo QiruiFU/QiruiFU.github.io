@@ -37,7 +37,7 @@ $$ \nabla_\mathbf{u}E = \mathbf{M}(\mathbf{u}-\mathbf{u}^*) &#43; \Delta t \frac
                             "url": "http:\/\/qiruifu.github.io\/implicit-mpm-misc-blog\/featured-image.jpg",
                             "width":  2560 ,
                             "height":  1440 
-                        }],"genre": "posts","keywords": "simulation","wordcount":  445 ,
+                        }],"genre": "posts","keywords": "simulation","wordcount":  440 ,
         "url": "http:\/\/qiruifu.github.io\/implicit-mpm-misc-blog\/","datePublished": "2025-06-12T11:07:15-04:00","dateModified": "2025-06-12T11:07:15-04:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -111,7 +111,7 @@ $$ \nabla_\mathbf{u}E = \mathbf{M}(\mathbf{u}-\mathbf{u}^*) &#43; \Delta t \frac
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Implicit MPM Misc</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Qirui (Chiray) Fu</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;445 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-12">2025-06-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;440 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -146,9 +146,9 @@ $$</p>
 $$
 \frac{\partial\Phi}{\partial\mathbf{x}_i} = \sum_p V_p^0 \mathbf{P}(\mathbf{F}')\mathbf{F}^T \nabla\omega_{ip}
 $$</p>
-<p>The $\mathbf{x}_i$ here means we are computing the entries $\{i\times3, i\times3+1, i\times3+2\}$ of $\frac{\partial\Phi}{\partial\mathbf{x}}$ . $\mathbf{F}'$ here means &ldquo;new deformation gradient&rdquo;, which is different from $\mathbf{F}$. Use the similar techniques to compute the derivative of this equation, we can have:</p>
+<p>The $\mathbf{x}_i$ here means we are computing the entries $\{i\times3, i\times3+1, i\times3+2\}$ of $\frac{\partial\Phi}{\partial\mathbf{x}}$ . $\mathbf{F}'$ here means &ldquo;new deformation gradient&rdquo;, which is different from $\mathbf{F}$. Use the similar techniques to compute the derivative of this equation, we have:</p>
 <p>$$
-\frac{\partial^2\Phi}{\partial\mathbf{x}_i\partial\mathbf{x}_j} = \sum_p (V_p^0 \frac{\partial\mathbf{P}}{\partial\mathbf{F}}(\mathbf{F}')(\mathbf{F}^T\nabla\omega_{jp})(\mathbf{F}^T\nabla\omega_{ip})^T + V_p^0 \mathbf{P}(\mathbf{F}')\mathbf{F}^T \nabla^2\omega_{ip}\delta_{ij})
+\frac{\partial^2\Phi}{\partial\mathbf{x}_i\partial\mathbf{x}_j} = \sum_p V_p^0 \frac{\partial\mathbf{P}}{\partial\mathbf{F}}(\mathbf{F}')(\mathbf{F}^T\nabla\omega_{jp})(\mathbf{F}^T\nabla\omega_{ip})^T
 $$</p>
 <p>For each particle, it will generate a $81\times81$ hessian matrix, which is a submatrix of the whole $\nabla^2_\mathbf{u}E$, because it is connected to $27$ grids in 3D simulation. From the equation above, we know how to compute a $3\times3$ submatrix of that $81\times 81$ matrix because only 2 grids are evolved. Finally, the code for computing hessian matrix should be like:</p>
 <div class="highlight"><div class="chroma">
