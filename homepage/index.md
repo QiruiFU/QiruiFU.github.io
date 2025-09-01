@@ -5,7 +5,7 @@
 <img src="/images/hp-2.jpg" style="width:25%">
 </p>
 
-## About Me
+## About Me - Fu Qirui (傅祺睿)
 
 I am currently a master's student in the [Computer Graphics & Game Technology(CGGT)](https://www.cis.upenn.edu/graduate/program-offerings/mse-in-computer-graphics-and-game-technology/) 
  program at the University of Pennsylvania. Previously, I received a B.Sc. in Computer Science and Technology from Nanjing University.
