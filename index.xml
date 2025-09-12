@@ -7,12 +7,14 @@
             <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster><lastBuildDate>Fri, 12 Sep 2025 13:36:25 -0400</lastBuildDate>
             <atom:link href="http://qiruifu.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Prefix Sum Blog</title>
+    <title>Compute Exclusive Prefix Sum with CUDA</title>
     <link>http://qiruifu.github.io/prefix-sum-blog/</link>
     <pubDate>Fri, 12 Sep 2025 13:36:25 -0400</pubDate>
     <author>Qirui (Chiray) Fu</author>
     <guid>http://qiruifu.github.io/prefix-sum-blog/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[Problem Description In this blog, we want to talk about an algorithm which can compute prefix sum (or pre-sum) of an array in parallel. Formally, for an input array a[N], we want an output array c[N] satisfying : $$ c[i] = \sum_{0\leq j &lt; i} a[j] $$
+Since it doesn&rsquo;t contain the value a[i], we call it &ldquo;exclusive pre-sum&rdquo;.
+Fenwick Tree In sequential implementation, this problem is realy easy and intuitive.]]></description>
 </item>
 <item>
     <title>Implicit MPM Misc</title>

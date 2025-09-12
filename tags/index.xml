@@ -4,7 +4,15 @@
         <link>http://qiruifu.github.io/tags/</link>
         <description>Tags - Tag - Qirui Fu</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</managingEditor>
-            <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster><lastBuildDate>Thu, 12 Jun 2025 11:07:15 -0400</lastBuildDate><atom:link href="http://qiruifu.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster><lastBuildDate>Fri, 12 Sep 2025 13:36:25 -0400</lastBuildDate><atom:link href="http://qiruifu.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Algorithm</title>
+    <link>http://qiruifu.github.io/tags/algorithm/</link>
+    <pubDate>Fri, 12 Sep 2025 13:36:25 -0400</pubDate>
+    <author>Qirui (Chiray) Fu</author>
+    <guid>http://qiruifu.github.io/tags/algorithm/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Simulation</title>
     <link>http://qiruifu.github.io/tags/simulation/</link>
     <pubDate>Thu, 12 Jun 2025 11:07:15 -0400</pubDate>

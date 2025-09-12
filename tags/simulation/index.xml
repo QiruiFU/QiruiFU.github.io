@@ -24,15 +24,6 @@ $$ \nabla_\mathbf{u}E = \mathbf{M}(\mathbf{u}-\mathbf{u}^*) + \Delta t \frac{\pa
 Framework of MPM Currently, I prefer to use APIC scheme to transfer velocity between particles and grids. The framework I always use is listed here:]]></description>
 </item>
 <item>
-    <title>Conjugate Gradient Method</title>
-    <link>http://qiruifu.github.io/cg-blog/</link>
-    <pubDate>Tue, 12 Nov 2024 14:26:52 -0500</pubDate>
-    <author>Qirui (Chiray) Fu</author>
-    <guid>http://qiruifu.github.io/cg-blog/</guid>
-    <description><![CDATA[Conjugate Gradient Method in Solving Linear Equation System Linear Equation System In fluid simulation, sometimes we need to solve a Linear Equation System like doing projection in Eulerian fluid. A linear Equation System can be written as a matrix form: $$ Ax = b $$
-where $A$ is a $N\times N$ matrix and $x,b$ are $N\times 1$ vectors. Actually, we have a lot of methods to solve this problem, like Gauss-Seidel iteration, Gaussian elimination, etc.]]></description>
-</item>
-<item>
     <title>FEM for Simulating Elastic Body</title>
     <link>http://qiruifu.github.io/fem-blog/</link>
     <pubDate>Tue, 25 Jun 2024 20:40:25 &#43;0800</pubDate>

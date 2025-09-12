@@ -97,11 +97,22 @@
         data-sizes="auto"
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><h1 class="home-title">Qirui Fu</h1><div class="links"><a href="https://github.com/QiruiFu" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://space.bilibili.com/355714243" title="bilibili" target="_blank" rel="noopener noreffer me"><i data-svg-src="/lib/simple-icons/icons/bilibili.min.svg" aria-hidden="true"></i></a><a href="mailto:fu_qirui@foxmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/prefix-sum-blog/">Prefix Sum Blog</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Qirui (Chiray) Fu</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-09-12">2025-09-12</time></span></div><div class="content"></div><div class="post-footer">
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/prefix-sum-blog/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/prefix-sum-blog/featured-image.jpg"
+        data-srcset="/prefix-sum-blog/featured-image.jpg, /prefix-sum-blog/featured-image.jpg 1.5x, /prefix-sum-blog/featured-image.jpg 2x"
+        data-sizes="auto"
+        alt="/prefix-sum-blog/featured-image.jpg"
+        title="/prefix-sum-blog/featured-image.jpg" /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/prefix-sum-blog/">Compute Exclusive Prefix Sum with CUDA</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Qirui (Chiray) Fu</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-09-12">2025-09-12</time></span></div><div class="content">Problem Description In this blog, we want to talk about an algorithm which can compute prefix sum (or pre-sum) of an array in parallel. Formally, for an input array a[N], we want an output array c[N] satisfying : $$ c[i] = \sum_{0\leq j &lt; i} a[j] $$
+Since it doesn&rsquo;t contain the value a[i], we call it &ldquo;exclusive pre-sum&rdquo;.
+Fenwick Tree In sequential implementation, this problem is realy easy and intuitive.</div><div class="post-footer">
         <a href="/prefix-sum-blog/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/">Tags</a></div></div>
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/algorithm/">Algorithm</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/implicit-mpm-misc-blog/"><img
         class="lazyload"
@@ -147,7 +158,7 @@ Framework of MPM Currently, I prefer to use APIC scheme to transfer velocity bet
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Qirui (Chiray) Fu</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-11-12">2024-11-12</time></span></div><div class="content">Conjugate Gradient Method in Solving Linear Equation System Linear Equation System In fluid simulation, sometimes we need to solve a Linear Equation System like doing projection in Eulerian fluid. A linear Equation System can be written as a matrix form: $$ Ax = b $$
 where $A$ is a $N\times N$ matrix and $x,b$ are $N\times 1$ vectors. Actually, we have a lot of methods to solve this problem, like Gauss-Seidel iteration, Gaussian elimination, etc.</div><div class="post-footer">
         <a href="/cg-blog/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/simulation/">Simulation</a></div></div>
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/algorithm/">Algorithm</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/fem-blog/"><img
         class="lazyload"
