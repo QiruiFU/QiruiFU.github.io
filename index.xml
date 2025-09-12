@@ -4,9 +4,17 @@
         <link>http://qiruifu.github.io/</link>
         <description>This is my cool site</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</managingEditor>
-            <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster><lastBuildDate>Thu, 12 Jun 2025 11:07:15 -0400</lastBuildDate>
+            <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster><lastBuildDate>Fri, 12 Sep 2025 13:36:25 -0400</lastBuildDate>
             <atom:link href="http://qiruifu.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Prefix Sum Blog</title>
+    <link>http://qiruifu.github.io/prefix-sum-blog/</link>
+    <pubDate>Fri, 12 Sep 2025 13:36:25 -0400</pubDate>
+    <author>Qirui (Chiray) Fu</author>
+    <guid>http://qiruifu.github.io/prefix-sum-blog/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Implicit MPM Misc</title>
     <link>http://qiruifu.github.io/implicit-mpm-misc-blog/</link>
     <pubDate>Thu, 12 Jun 2025 11:07:15 -0400</pubDate>
