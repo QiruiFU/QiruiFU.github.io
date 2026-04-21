@@ -1,0 +1,27 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Algorithm - Tag - Qirui Fu</title>
+        <link>https://qiruifu.github.io/tags/algorithm/</link>
+        <description>Algorithm - Tag - Qirui Fu</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</managingEditor>
+            <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster><lastBuildDate>Fri, 12 Sep 2025 13:36:25 -0400</lastBuildDate><atom:link href="https://qiruifu.github.io/tags/algorithm/" rel="self" type="application/rss+xml" /><item>
+    <title>Compute Exclusive Prefix Sum with CUDA</title>
+    <link>https://qiruifu.github.io/prefix-sum-blog/</link>
+    <pubDate>Fri, 12 Sep 2025 13:36:25 -0400</pubDate>
+    <author>Qirui (Chiray) Fu</author>
+    <guid>https://qiruifu.github.io/prefix-sum-blog/</guid>
+    <description><![CDATA[Problem Description In this blog, we want to talk about an algorithm which can compute prefix sum (or pre-sum) of an array in parallel. Formally, for an input array a[N], we want an output array c[N] satisfying : $$ c[i] = \sum_{0\leq j &lt; i} a[j] $$
+Since it doesn&rsquo;t contain the value a[i], we call it &ldquo;exclusive pre-sum&rdquo;.
+Fenwick Tree In sequential implementation, this problem is realy easy and intuitive.]]></description>
+</item>
+<item>
+    <title>Conjugate Gradient Method</title>
+    <link>https://qiruifu.github.io/cg-blog/</link>
+    <pubDate>Tue, 12 Nov 2024 14:26:52 -0500</pubDate>
+    <author>Qirui (Chiray) Fu</author>
+    <guid>https://qiruifu.github.io/cg-blog/</guid>
+    <description><![CDATA[Conjugate Gradient Method in Solving Linear Equation System Linear Equation System In fluid simulation, sometimes we need to solve a Linear Equation System like doing projection in Eulerian fluid. A linear Equation System can be written as a matrix form: $$ Ax = b $$
+where $A$ is a $N\times N$ matrix and $x,b$ are $N\times 1$ vectors. Actually, we have a lot of methods to solve this problem, like Gauss-Seidel iteration, Gaussian elimination, etc.]]></description>
+</item>
+</channel>
+</rss>

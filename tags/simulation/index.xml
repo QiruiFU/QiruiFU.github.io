@@ -1,0 +1,37 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Simulation - Tag - Qirui Fu</title>
+        <link>https://qiruifu.github.io/tags/simulation/</link>
+        <description>Simulation - Tag - Qirui Fu</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</managingEditor>
+            <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster><lastBuildDate>Thu, 12 Jun 2025 11:07:15 -0400</lastBuildDate><atom:link href="https://qiruifu.github.io/tags/simulation/" rel="self" type="application/rss+xml" /><item>
+    <title>Implicit MPM Misc</title>
+    <link>https://qiruifu.github.io/implicit-mpm-misc-blog/</link>
+    <pubDate>Thu, 12 Jun 2025 11:07:15 -0400</pubDate>
+    <author>Qirui (Chiray) Fu</author>
+    <guid>https://qiruifu.github.io/implicit-mpm-misc-blog/</guid>
+    <description><![CDATA[Some Other Things for Implicit MPM In the last blog, we talked about some basic things for implicit MPM. But there are also some details we should mention in this continued blog.
+Hessian Matrix In the last blog, we defined $E(\mathbf{u}) = \frac{1}{2}(\mathbf{u}-\mathbf{u^*})\mathbf{M}(\mathbf{u}-\mathbf{u^*}) + \Phi(\mathbf{x}^n+\Delta t \mathbf{u})$ as the energy for a system, our goal is to minimize it. We know the gradient of it is :
+$$ \nabla_\mathbf{u}E = \mathbf{M}(\mathbf{u}-\mathbf{u}^*) + \Delta t \frac{\partial \Phi}{\partial\mathbf{x}}|_{(\mathbf{x}^n+\Delta t \mathbf{u})} = \mathbf{M}(\mathbf{u}-\mathbf{u}^*) - \Delta t \mathbf{f}(\mathbf{x}^n+\Delta t \mathbf{u}) $$]]></description>
+</item>
+<item>
+    <title>Implicit MPM</title>
+    <link>https://qiruifu.github.io/implicit-mpm-blog/</link>
+    <pubDate>Sat, 12 Apr 2025 21:05:25 -0400</pubDate>
+    <author>Qirui (Chiray) Fu</author>
+    <guid>https://qiruifu.github.io/implicit-mpm-blog/</guid>
+    <description><![CDATA[Implicit Update Scheme for MPM The main purpose of this article is to talk about how to apply implicit update in MPM framework. To know more details about MPM, you can read This SIGGRAPH 2016 Course Notes and A Material Point Method For Snow Simulation (Alexey Stomakhin et al., 2013) .
+Framework of MPM Currently, I prefer to use APIC scheme to transfer velocity between particles and grids. The framework I always use is listed here:]]></description>
+</item>
+<item>
+    <title>FEM for Simulating Elastic Body</title>
+    <link>https://qiruifu.github.io/fem-blog/</link>
+    <pubDate>Tue, 25 Jun 2024 20:40:25 &#43;0800</pubDate>
+    <author>Qirui (Chiray) Fu</author>
+    <guid>https://qiruifu.github.io/fem-blog/</guid>
+    <description><![CDATA[Finite Elements Method for Simulating Elastic Body What do we do in simulating spring-mass system? Recall what we did in simulating Spring-Mass system:
+  Firstly, we describe deformation of springs using $\mathbf{F} = \frac{\mathbf{x}_1 - \mathbf{x}_2}{l_0}$. Something noticable here is that $\mathbf{F}$ is a vector and it is related to rotation of springs.
+  Then, we define strain $G = |\mathbf{F}| - 1$. The purpose of $G$ is that it is a scale and only related to stretch and contraction of springs.]]></description>
+</item>
+</channel>
+</rss>
