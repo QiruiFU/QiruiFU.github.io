@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: http://qiruifu.github.io/sitemap.xml
+Sitemap: https://qiruifu.github.io/sitemap.xml

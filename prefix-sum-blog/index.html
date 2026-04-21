@@ -9,21 +9,20 @@
 Since it doesn&rsquo;t contain the value a[i], we call it &ldquo;exclusive pre-sum&rdquo;.
 Fenwick Tree In sequential implementation, this problem is realy easy and intuitive." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://qiruifu.github.io/prefix-sum-blog/" /><meta property="og:image" content="http://qiruifu.github.io/prefix-sum-blog/featured-image.jpg" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://qiruifu.github.io/prefix-sum-blog/" /><meta property="og:image" content="https://qiruifu.github.io/prefix-sum-blog/featured-image.jpg"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2025-09-12T13:36:25-04:00" />
 <meta property="article:modified_time" content="2025-09-12T13:36:25-04:00" /><meta property="og:site_name" content="My cool site" />
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://qiruifu.github.io/prefix-sum-blog/featured-image.jpg" /><meta name="twitter:title" content="Compute Exclusive Prefix Sum with CUDA"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://qiruifu.github.io/prefix-sum-blog/featured-image.jpg"/>
+<meta name="twitter:title" content="Compute Exclusive Prefix Sum with CUDA"/>
 <meta name="twitter:description" content="Problem Description In this blog, we want to talk about an algorithm which can compute prefix sum (or pre-sum) of an array in parallel. Formally, for an input array a[N], we want an output array c[N] satisfying : $$ c[i] = \sum_{0\leq j &lt; i} a[j] $$
 Since it doesn&rsquo;t contain the value a[i], we call it &ldquo;exclusive pre-sum&rdquo;.
 Fenwick Tree In sequential implementation, this problem is realy easy and intuitive."/>
 <meta name="application-name" content="My cool site">
 <meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://qiruifu.github.io/prefix-sum-blog/" /><link rel="prev" href="http://qiruifu.github.io/implicit-mpm-misc-blog/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://qiruifu.github.io/prefix-sum-blog/" /><link rel="prev" href="https://qiruifu.github.io/implicit-mpm-misc-blog/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -31,14 +30,14 @@ Fenwick Tree In sequential implementation, this problem is realy easy and intuit
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/qiruifu.github.io\/prefix-sum-blog\/"
+            "@id": "https:\/\/qiruifu.github.io\/prefix-sum-blog\/"
         },"image": [{
                             "@type": "ImageObject",
-                            "url": "http:\/\/qiruifu.github.io\/prefix-sum-blog\/featured-image.jpg",
+                            "url": "https:\/\/qiruifu.github.io\/prefix-sum-blog\/featured-image.jpg",
                             "width":  962 ,
                             "height":  482 
-                        }],"genre": "posts","keywords": "Algorithm","wordcount":  929 ,
-        "url": "http:\/\/qiruifu.github.io\/prefix-sum-blog\/","datePublished": "2025-09-12T13:36:25-04:00","dateModified": "2025-09-12T13:36:25-04:00","publisher": {
+                        }],"genre": "posts","keywords": "Algorithm","wordcount":  930 ,
+        "url": "https:\/\/qiruifu.github.io\/prefix-sum-blog\/","datePublished": "2025-09-12T13:36:25-04:00","dateModified": "2025-09-12T13:36:25-04:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -54,7 +53,7 @@ Fenwick Tree In sequential implementation, this problem is realy easy and intuit
             <a href="/" title="Qirui Fu">Qirui (Chiray) Fu</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/homepage"> About </a><a class="menu-item" href="/cv.pdf"> CV </a><a class="menu-item" href="/posts/"> Blogs </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/"> Home </a><a class="menu-item" href="/homepage/"> About </a><a class="menu-item" href="/cv.pdf"> CV </a><a class="menu-item" href="/posts/"> Blogs </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
                             <i class="fas fa-search fa-fw" aria-hidden="true"></i>
@@ -67,7 +66,8 @@ Fenwick Tree In sequential implementation, this problem is realy easy and intuit
                         </span>
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
+                </a>
+            </div>
         </div>
     </div>
 </header><header class="mobile" id="header-mobile">
@@ -96,7 +96,7 @@ Fenwick Tree In sequential implementation, this problem is realy easy and intuit
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a class="menu-item" href="/homepage" title="">About</a><a class="menu-item" href="/cv.pdf" title="">CV</a><a class="menu-item" href="/posts/" title="">Blogs</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/" title="">Home</a><a class="menu-item" href="/homepage/" title="">About</a><a class="menu-item" href="/cv.pdf" title="">CV</a><a class="menu-item" href="/posts/" title="">Blogs</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
@@ -110,8 +110,9 @@ Fenwick Tree In sequential implementation, this problem is realy easy and intuit
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Compute Exclusive Prefix Sum with CUDA</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Qirui (Chiray) Fu</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-09-12">2025-09-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;929 words&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Qirui (Chiray) Fu</a>
+</span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-09-12">2025-09-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;930 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -146,7 +147,8 @@ c[i] = \sum_{0\leq j &lt; i} a[j]
 $$</p>
 <p>Since it doesn&rsquo;t contain the value <code>a[i]</code>, we call it &ldquo;exclusive pre-sum&rdquo;.</p>
 <h2 id="fenwick-tree">Fenwick Tree</h2>
-<p>In sequential implementation, this problem is realy easy and intuitive. However, we also have a data structure called Binary Index Tree or &ldquo;Fenwick Tree&rdquo;, which is designed for this scene: if we need to update an element in <code>a[N]</code>, how could we get new <code>c[N]</code> quicker? In naive method, the time consumed on updating one change is <code>O(N)</code>. Fenwick Tree is smartly designed so we can do it in <code>O(logN)</code>. In fact, our parallel algorithm is based on this data structure, please make sure you understand it before reading the next parts. Here is a <a href="https://cp-algorithms.com/data_structures/fenwick.html" target="_blank" rel="noopener noreffer ">blog</a> I think helpful.</p>
+<p>In sequential implementation, this problem is realy easy and intuitive. However, we also have a data structure called Binary Index Tree or &ldquo;Fenwick Tree&rdquo;, which is designed for this scene: if we need to update an element in <code>a[N]</code>, how could we get new <code>c[N]</code> quicker? In naive method, the time consumed on updating one change is <code>O(N)</code>. Fenwick Tree is smartly designed so we can do it in <code>O(logN)</code>. In fact, our parallel algorithm is based on this data structure, please make sure you understand it before reading the next parts. Here is a <a href="https://cp-algorithms.com/data_structures/fenwick.html" target="_blank" rel="noopener noreffer">blog</a>
+ I think helpful.</p>
 <h2 id="our-method">Our Method</h2>
 <h3 id="overview">Overview</h3>
 <p>In general, the idea of this parallel algorithm is to build Binary Index Tree at first, which is stored in <code>b[N]</code>. Then compute <code>c[i]</code> for each <code>i</code> in parallel. Sometimes we call first step &ldquo;up sweep&rdquo; and second step &ldquo;down sweep&rdquo;, indicating the direction we are working on the binary tree.</p>
@@ -171,10 +173,10 @@ $$</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">node</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">layer</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="p">[</span><span class="n">left</span><span class="o">-</span><span class="n">son</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="p">[</span><span class="n">right</span><span class="o">-</span><span class="n">son</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">left</span><span class="o">-</span><span class="n">son</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">node</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">layer</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">c</span><span class="p">[</span><span class="n">left</span><span class="o">-</span><span class="n">son</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="n">c</span><span class="p">[</span><span class="n">right</span><span class="o">-</span><span class="n">son</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">left</span><span class="o">-</span><span class="n">son</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span>
+</code></pre></td></tr></table>
 </div>
 </div><p>In real implementation, we don&rsquo;t have to have three different arrays or any tree structure, everything can be done in only one array. In each layer, the computation is parallelized. Another issue is this method only works on the power-of-2 length. We need to extend the size of input array to the next power of 2.</p>
 <h2 id="acceleration-with-shared-memory">Acceleration with Shared Memory</h2>
@@ -214,39 +216,40 @@ $$</p>
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="n">__global__</span> <span class="kt">void</span> <span class="nf">kernel</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">block_sum</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">    <span class="n">__shared__</span> <span class="n">cache</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">copy</span> <span class="n">value</span> <span class="n">from</span> <span class="n">global</span> <span class="n">to</span> <span class="n">shared</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nf">UpSweep</span><span class="p">();</span> <span class="c1">// only for values in this block
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="n">block_sum</span><span class="p">[</span><span class="n">blockid</span><span class="p">]</span> <span class="o">=</span> <span class="n">cache</span><span class="p">[</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cache</span><span class="p">[</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nf">DownSweep</span><span class="p">();</span> <span class="c1">// only for values in this block
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="n">copy</span> <span class="n">value</span> <span class="n">from</span> <span class="n">shared</span> <span class="n">to</span> <span class="n">global</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">preSum</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">array</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">    <span class="n">compute</span> <span class="n">block_cnt</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="o">*</span><span class="n">block_sum</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">kernel</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">block_sum</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">block_cnt</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">        <span class="nf">preSum</span><span class="p">(</span><span class="n">block_sum</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1">// you can write another kernel to finish this loop
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">array</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">block_id</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="n">block_size</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">block_sum</span><span class="p">[</span><span class="n">block_id</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// array is good now
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="n">__global__</span> <span class="kt">void</span> <span class="nf">kernel</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">block_sum</span><span class="p">){</span>
+    <span class="n">__shared__</span> <span class="n">cache</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
+    
+    <span class="n">copy</span> <span class="n">value</span> <span class="n">from</span> <span class="n">global</span> <span class="n">to</span> <span class="n">shared</span><span class="p">;</span>
+
+    <span class="n">UpSweep</span><span class="p">();</span> <span class="c1">// only for values in this block
+</span><span class="c1"></span>
+    <span class="n">block_sum</span><span class="p">[</span><span class="n">blockid</span><span class="p">]</span> <span class="o">=</span> <span class="n">cache</span><span class="p">[</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">cache</span><span class="p">[</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">DownSweep</span><span class="p">();</span> <span class="c1">// only for values in this block
+</span><span class="c1"></span>
+    <span class="n">copy</span> <span class="n">value</span> <span class="n">from</span> <span class="n">shared</span> <span class="n">to</span> <span class="n">global</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">preSum</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">array</span><span class="p">){</span>
+    <span class="n">compute</span> <span class="n">block_cnt</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">block_sum</span><span class="p">;</span>
+    <span class="n">kernel</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">block_sum</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">block_cnt</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">){</span>
+        <span class="n">preSum</span><span class="p">(</span><span class="n">block_sum</span><span class="p">);</span>
+
+        <span class="c1">// you can write another kernel to finish this loop
+</span><span class="c1"></span>        <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">array</span> <span class="p">{</span>
+            <span class="n">block_id</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="n">block_size</span><span class="p">;</span>
+            <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">block_sum</span><span class="p">[</span><span class="n">block_id</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// array is good now
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div><p>You can find my implementation for this algorithm in this <a href="https://github.com/QiruiFU/565-P2" target="_blank" rel="noopener noreffer ">repo</a>. I think it&rsquo;s so cool since the usage of shared memory can accelerate so much. It also leads to a further problem: what if the input array is so long that we don&rsquo;t have enough memory to run it recursively? Maybe we have some more powerful algorithms Haha :)</p>
+</div><p>You can find my implementation for this algorithm in this <a href="https://github.com/QiruiFU/565-P2" target="_blank" rel="noopener noreffer">repo</a>
+. I think it&rsquo;s so cool since the usage of shared memory can accelerate so much. It also leads to a further problem: what if the input array is so long that we don&rsquo;t have enough memory to run it recursively? Maybe we have some more powerful algorithms Haha :)</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -258,7 +261,7 @@ $$</p>
                             <a class="link-to-markdown" href="/prefix-sum-blog/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://qiruifu.github.io/prefix-sum-blog/" data-title="Compute Exclusive Prefix Sum with CUDA" data-hashtags="Algorithm"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://qiruifu.github.io/prefix-sum-blog/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://qiruifu.github.io/prefix-sum-blog/" data-title="Compute Exclusive Prefix Sum with CUDA"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://qiruifu.github.io/prefix-sum-blog/" data-title="Compute Exclusive Prefix Sum with CUDA" data-hashtags="Algorithm"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://qiruifu.github.io/prefix-sum-blog/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://qiruifu.github.io/prefix-sum-blog/" data-title="Compute Exclusive Prefix Sum with CUDA"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -274,8 +277,8 @@ $$</p>
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.123.7">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Qirui (Chiray) Fu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Qirui (Chiray) Fu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
@@ -284,5 +287,5 @@ $$</p>
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>
