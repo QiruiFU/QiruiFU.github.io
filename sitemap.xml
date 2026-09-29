@@ -2,10 +2,11 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://qiruifu.github.io/tags/algorithm/</loc><lastmod>2025-09-12T13:36:25-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://qiruifu.github.io/tags/algorithm/</loc><lastmod>2026-09-27T09:55:02&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://qiruifu.github.io/posts/</loc><lastmod>2026-09-27T09:55:02&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://qiruifu.github.io/tags/</loc><lastmod>2026-09-27T09:55:02&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://qiruifu.github.io/weno-blog/</loc><lastmod>2026-09-27T09:55:02&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://qiruifu.github.io/prefix-sum-blog/</loc><lastmod>2025-09-12T13:36:25-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://qiruifu.github.io/posts/</loc><lastmod>2025-09-12T13:36:25-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://qiruifu.github.io/tags/</loc><lastmod>2025-09-12T13:36:25-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://qiruifu.github.io/implicit-mpm-misc-blog/</loc><lastmod>2025-06-12T11:07:15-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://qiruifu.github.io/tags/simulation/</loc><lastmod>2025-06-12T11:07:15-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://qiruifu.github.io/implicit-mpm-blog/</loc><lastmod>2025-04-12T21:05:25-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
