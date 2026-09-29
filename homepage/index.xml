@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qirui Fu</title>
+    <link>https://qiruifu.github.io/homepage/</link>
+    <description>Recent content on Qirui Fu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</managingEditor>
+    <webMaster>fu_qirui@foxmail.com (Qirui (Chiray) Fu)</webMaster>
+    <lastBuildDate>Tue, 18 Jun 2024 15:04:32 +0800</lastBuildDate><atom:link href="https://qiruifu.github.io/homepage/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
